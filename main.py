@@ -27,11 +27,35 @@ class ExpresionDoble(Expresion):
         return 1 + max(self.exp1.calcular_nivel(), self.exp2.calcular_nivel())
 
     def __str__(self):
-        padding = self.calcular_nivel() * 5
-        operador = f"({self.operador()})".center(int(padding * 2)) + "\n"
-        ramas = "/".center(padding) + "\\".center(padding)
-        expresiones = str(self.exp1).center(padding) + str(self.exp2).center(padding)
-        return operador + ramas + expresiones
+        padding_izquierda = self.exp1.calcular_nivel()
+        padding_derecha = self.exp2.calcular_nivel()
+        padding_total = (padding_izquierda + padding_derecha) * 5
+        expresion_1 = str(self.exp1)
+        expresion_2 = str(self.exp2)
+        lineas_expresion_1 = expresion_1.splitlines()
+        lineas_expresion_2 = expresion_2.splitlines()
+        maximo_de_lineas = max(len(lineas_expresion_1), len(lineas_expresion_2))
+        lineas_unidas = []
+        operador = f"{" " * ((padding_total // 2)-1)} ({self.operador()})\n"
+        ramas = f"/ {" " * padding_total} \\\n"
+
+        numero_expresion_1 = 1
+        numero_expresion_2 = 1
+        for linea in range(maximo_de_lineas):
+            if linea < len(lineas_expresion_1):
+                numero_expresion_1 += 1
+                linea1 = lineas_expresion_1[linea]
+            else:
+                linea1 = ""
+            if linea < len(lineas_expresion_2):
+                numero_expresion_2 += 1
+                linea2= lineas_expresion_2[linea]
+            else:
+                linea2 = ""
+
+            lineas_unidas.append(f"{linea1}{"  "}{linea2}")
+
+        return operador + ramas +  "\n".join(lineas_unidas)
 
 class Suma(ExpresionDoble):
 
@@ -70,7 +94,15 @@ class Division(ExpresionDoble):
         return self.exp1.evaluar() / self.exp2.evaluar()
 
 
-suma = Suma(Valor(3), Valor(5))
-resta = Resta(Valor(2), Valor(1))
-multiplicacion = Multiplicacion(suma, resta)
+
+multiplicacion = Multiplicacion(
+    Suma(
+        Valor(1),
+        Valor(2)
+    ),
+    Resta(
+        Valor(9),
+        Valor(9)
+    )
+)
 print(multiplicacion)
