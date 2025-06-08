@@ -30,10 +30,6 @@ class ExpresionDoble(Expresion):
         return self.exp_izquierda.calcular_ancho() + self.exp_derecha.calcular_ancho()
 
     def __str__(self):
-        expresion_1 = str(self.exp_izquierda)
-        expresion_2 = str(self.exp_derecha)
-        lineas_expresion_1 = expresion_1.splitlines()
-        lineas_expresion_2 = expresion_2.splitlines()
         ancho_del_arbol = self.calcular_ancho()
         resultado = str(self.evaluar())
         ancho_resultado = len(resultado) // 2
@@ -42,17 +38,25 @@ class ExpresionDoble(Expresion):
         linea_operador = f"({self.operador()}) ".rjust(padding)
         linea_de_ramas = "/   \\".rjust(padding)
 
+        # Necesitamos dividir las líneas para poder poner la expresion izquierda y derechas
+        # en el mismo renglón en la consola
+        lineas_expresion_1 = str(self.exp_izquierda).splitlines()
+        lineas_expresion_2 = str(self.exp_derecha).splitlines()
         cantidad_de_lineas_de_la_expresion_mas_larga = max(len(lineas_expresion_1), len(lineas_expresion_2))
         todas_las_lineas = []
         for linea in range(cantidad_de_lineas_de_la_expresion_mas_larga):
-            linea_exp_1 = lineas_expresion_1[linea] if linea < len(lineas_expresion_1) else ""
-            linea_exp_2 = lineas_expresion_2[linea] if linea < len(lineas_expresion_2) else ""
-            padding_centro = 3 if linea_exp_2.isnumeric()  else ancho_del_arbol
-            padding_izquierda = 0 if linea_exp_2.isnumeric()  else ancho_del_arbol
-            padding_derecha = 0 if linea_exp_1.isnumeric() else ancho_del_arbol
-            linea_exp_1 = linea_exp_1.rjust(padding_izquierda)
-            linea_exp_2 = linea_exp_2.ljust(padding_derecha)
-            todas_las_lineas.append(f"{linea_exp_1}{" " * padding_centro}{linea_exp_2}")
+            # si una línea es más larga que la otra ponemos un string vacío
+            linea_exp_izquierda = lineas_expresion_1[linea] if linea < len(lineas_expresion_1) else ""
+            linea_exp_derecha = lineas_expresion_2[linea] if linea < len(lineas_expresion_2) else ""
+            # si tenemos un valor a la izquierda, agregamos padding mínimo
+            # sino el ancho que tenga el árbol
+            padding_centro = 3 if linea_exp_derecha.isnumeric()  else ancho_del_arbol
+            padding_izquierda = 0 if linea_exp_derecha.isnumeric()  else ancho_del_arbol
+            padding_derecha = 0 if linea_exp_izquierda.isnumeric() else ancho_del_arbol
+            # ajustamos las lineas con el padding
+            linea_exp_izquierda = linea_exp_izquierda.rjust(padding_izquierda)
+            linea_exp_derecha = linea_exp_derecha.ljust(padding_derecha)
+            todas_las_lineas.append(f"{linea_exp_izquierda}{" " * padding_centro}{linea_exp_derecha}")
 
         return (f"{linea_resultado}\n"+
                 f"{linea_operador}\n"+

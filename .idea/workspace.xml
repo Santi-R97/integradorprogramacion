@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Intento de imprimir arbol">
+    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Usar mismas expresiones que en teoría">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -16,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lucianomartinez27"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Santi-R97/integradorprogramacion.git",
+    "accountId": "812da7b6-b0ef-48d5-829a-0c27571f37fd"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python312/Lib/urllib/parse.py" root0="SKIP_INSPECTION" />
   </component>
@@ -33,7 +45,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -71,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749346084508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Usar mismas expresiones que en teoría">
+      <option name="closed" value="true" />
+      <created>1749392285391</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749392285391</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,9 +99,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Intento de imprimir arbol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intento de imprimir arbol" />
+    <MESSAGE value="Usar mismas expresiones que en teoría" />
+    <option name="LAST_COMMIT_MESSAGE" value="Usar mismas expresiones que en teoría" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/UTNIntegradorProgramacion$main.coverage" NAME="main Coverage Results" MODIFIED="1749387728264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UTNIntegradorProgramacion$main.coverage" NAME="main Coverage Results" MODIFIED="1749393232183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
