@@ -2,12 +2,15 @@ class Expresion:
     def evaluar(self):
         raise Exception("Tiene que implementarlo la subclase")
 
-    def calcular_nivel(self):
-        return 0
+    def calcular_ancho(self):
+        raise Exception("Tiene que implementarlo la subclase")
 
 class Valor(Expresion):
     def __init__(self, valor):
         self.valor = valor
+
+    def calcular_ancho(self):
+        return 1
 
     def evaluar(self):
         return self.valor
@@ -23,39 +26,33 @@ class ExpresionDoble(Expresion):
     def operador(self):
         raise Exception("Tiene que implementarlo la subclase")
 
-    def calcular_nivel(self):
-        return 1 + max(self.exp1.calcular_nivel(), self.exp2.calcular_nivel())
+    def calcular_ancho(self):
+        return self.exp1.calcular_ancho() + self.exp2.calcular_ancho()
 
     def __str__(self):
-        padding_izquierda = self.exp1.calcular_nivel()
-        padding_derecha = self.exp2.calcular_nivel()
-        padding_total = (padding_izquierda + padding_derecha) * 5
         expresion_1 = str(self.exp1)
         expresion_2 = str(self.exp2)
         lineas_expresion_1 = expresion_1.splitlines()
         lineas_expresion_2 = expresion_2.splitlines()
-        maximo_de_lineas = max(len(lineas_expresion_1), len(lineas_expresion_2))
-        lineas_unidas = []
-        operador = f"{" " * ((padding_total // 2)-1)} ({self.operador()})\n"
-        ramas = f"/ {" " * padding_total} \\\n"
+        ancho_del_arbol = self.calcular_ancho()
+        linea_operador = f"({self.operador()}) ".rjust(ancho_del_arbol*2)
+        linea_de_ramas = "/   \\".rjust(ancho_del_arbol*2)
 
-        numero_expresion_1 = 1
-        numero_expresion_2 = 1
-        for linea in range(maximo_de_lineas):
-            if linea < len(lineas_expresion_1):
-                numero_expresion_1 += 1
-                linea1 = lineas_expresion_1[linea]
-            else:
-                linea1 = ""
-            if linea < len(lineas_expresion_2):
-                numero_expresion_2 += 1
-                linea2= lineas_expresion_2[linea]
-            else:
-                linea2 = ""
+        cantidad_de_lineas_de_la_expresion_mas_larga = max(len(lineas_expresion_1), len(lineas_expresion_2))
+        todas_las_lineas = []
+        for linea in range(cantidad_de_lineas_de_la_expresion_mas_larga):
+            linea_exp_1 = lineas_expresion_1[linea] if linea < len(lineas_expresion_1) else ""
+            linea_exp_2 = lineas_expresion_2[linea] if linea < len(lineas_expresion_2) else ""
+            padding_centro = 3 if linea_exp_2.isnumeric()  else 0
+            padding_izquierda = 0 if linea_exp_2.isnumeric()  else ancho_del_arbol
+            padding_derecha = 0 if linea_exp_1.isnumeric() else ancho_del_arbol
+            linea_exp_1 = linea_exp_1.rjust(padding_izquierda)
+            linea_exp_2 = linea_exp_2.ljust(padding_derecha)
+            todas_las_lineas.append(f"{linea_exp_1}{" " * padding_centro}{linea_exp_2}")
 
-            lineas_unidas.append(f"{linea1}{"  "}{linea2}")
-
-        return operador + ramas +  "\n".join(lineas_unidas)
+        return (f"{linea_operador}\n"+
+                f"{linea_de_ramas}\n"+
+                '\n'.join(todas_las_lineas))
 
 class Suma(ExpresionDoble):
 
@@ -97,12 +94,37 @@ class Division(ExpresionDoble):
 
 multiplicacion = Multiplicacion(
     Suma(
-        Valor(1),
-        Valor(2)
+        Valor(2),
+        Valor(1)
     ),
     Resta(
-        Valor(9),
-        Valor(9)
+        Division(
+            Suma(
+                Resta(
+                    Division(
+                        Suma(
+                            Resta(
+                                Division(
+                                    Suma(
+                                        Valor(2),
+                                        Valor(1)
+                                    ),
+                                    Valor(1)
+                                ),
+                                Valor(1)
+                            ),
+                            Valor(1)
+                        ),
+                        Valor(1)
+                    ),
+                    Valor(1)
+                ),
+                Valor(1)
+            ),
+            Valor(1)
+        ),
+        Valor(1)
     )
 )
+print(f"El resultado de la multiplicación es {multiplicacion.evaluar()}")
 print(multiplicacion)
