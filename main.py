@@ -99,37 +99,3 @@ class Division(ExpresionDoble):
         # evaluamos ambas expresiones y dividimos
         return self.exp_izquierda.evaluar() / self.exp_derecha.evaluar()
 
-
-
-multiplicacion = Multiplicacion(
-    Suma(
-        Valor(3),
-        Valor(5)
-    ),
-    Resta(
-        Division(
-            Valor(10),
-            Valor(5)
-        ),
-        Valor(1)
-    )
-)
-
-print(f"El resultado de la multiplicacion es {multiplicacion.evaluar()}")
-print(multiplicacion)
-
-suma = Suma(
-    Division(
-        Valor(-6),
-        Valor(-3)
-    ),
-    Multiplicacion(
-        Resta(
-            Valor(96),
-            Valor(12)
-        ),
-        Valor(23)
-    )
-)
-print(f"El resultado de la suma es {suma.evaluar()}")
-print(suma)
