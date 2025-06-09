@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Agregar README" />
+    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Remover ejemplos de evaluación de expresiones" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +84,7 @@
       <updated>1749335813728</updated>
       <workItem from="1749335814776" duration="3519000" />
       <workItem from="1749381523025" duration="4145000" />
-      <workItem from="1749471458309" duration="6649000" />
+      <workItem from="1749471458309" duration="6997000" />
     </task>
     <task id="LOCAL-00001" summary="Intento de imprimir arbol">
       <option name="closed" value="true" />
@@ -126,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749484899500</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Remover ejemplos de evaluación de expresiones">
+      <option name="closed" value="true" />
+      <created>1749484979980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749484979980</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +146,8 @@
     <MESSAGE value="Agregar comentarios a generación de árbol como string" />
     <MESSAGE value="Agregar jupiter notebook" />
     <MESSAGE value="Agregar README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregar README" />
+    <MESSAGE value="Remover ejemplos de evaluación de expresiones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remover ejemplos de evaluación de expresiones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
