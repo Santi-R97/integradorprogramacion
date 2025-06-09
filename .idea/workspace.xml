@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Agregar comentarios a generación de árbol como string">
-      <change afterPath="$PROJECT_DIR$/arboles.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a4b8fadc-a0c9-439e-93e1-f6a9c5c62902" name="Changes" comment="Agregar jupiter notebook">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/lucia/PycharmProjects/UTNIntegradorProgramacion",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,6 +64,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucia\PycharmProjects\UTNIntegradorProgramacion" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +86,7 @@
       <updated>1749335813728</updated>
       <workItem from="1749335814776" duration="3519000" />
       <workItem from="1749381523025" duration="4145000" />
-      <workItem from="1749471458309" duration="6121000" />
+      <workItem from="1749471458309" duration="6248000" />
     </task>
     <task id="LOCAL-00001" summary="Intento de imprimir arbol">
       <option name="closed" value="true" />
@@ -109,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749393677980</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Agregar jupiter notebook">
+      <option name="closed" value="true" />
+      <created>1749484475264</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749484475264</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +130,8 @@
     <MESSAGE value="Intento de imprimir arbol" />
     <MESSAGE value="Usar mismas expresiones que en teoría" />
     <MESSAGE value="Agregar comentarios a generación de árbol como string" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregar comentarios a generación de árbol como string" />
+    <MESSAGE value="Agregar jupiter notebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregar jupiter notebook" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
